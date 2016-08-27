@@ -9,11 +9,9 @@ public class DinosaurController : MonoBehaviour {
     [SerializeField] private Animator fLegAnim, bLegAnim;
 
     [SerializeField] private float motorVelocity = 100f;
+    [SerializeField] private float jumpForce = 3000f;
     private Vector2 centerOfMassIncrement = new Vector2(0.1f, 0f);
     private float centerOfMassLimit = 5f;
-
-    private float leftSide = 1f;
-    private float rightSide = -1f;
 
     //Flipping
     [SerializeField] private Transform[] flipParts;
@@ -33,6 +31,9 @@ public class DinosaurController : MonoBehaviour {
 
     private void UpdateMovement()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+            legs.AddForce(Vector2.up * jumpForce);
+
         if (Input.GetKey(KeyCode.D))
         {
             legs.angularVelocity = -motorVelocity;

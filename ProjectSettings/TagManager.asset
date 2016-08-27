@@ -15,8 +15,8 @@ TagManager:
   - 
   - Map
   - Dinosaur
-  - 
-  - 
+  - Props
+  - Picked
   - 
   - 
   - 
@@ -46,4 +46,7 @@ TagManager:
     locked: 0
   - name: Entity
     uniqueID: 1446270435
+    locked: 0
+  - name: Effects
+    uniqueID: 991436667
     locked: 0
