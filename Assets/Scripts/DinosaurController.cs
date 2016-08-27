@@ -3,15 +3,27 @@ using System.Collections;
 
 public class DinosaurController : MonoBehaviour {
 
-    [SerializeField] private Rigidbody2D motor;
-    [SerializeField] private HingeJoint2D joint;
+    [SerializeField] private Rigidbody2D legs;
+    [SerializeField] private Rigidbody2D body;
+
+    [SerializeField] private Animator fLegAnim, bLegAnim;
 
     [SerializeField] private float motorVelocity = 100f;
-    [SerializeField] private float jointVelocity = 100f;
+    private Vector2 centerOfMassIncrement = new Vector2(0.1f, 0f);
+    private float centerOfMassLimit = 5f;
+
+    private float leftSide = 1f;
+    private float rightSide = -1f;
+
+    //Flipping
+    [SerializeField] private Transform[] flipParts;
 
 	void Start () 
     {
-	
+        //Make center of mass a little higher
+        Vector2 centerOfMass = body.centerOfMass;
+        centerOfMass.y = 1f;
+        body.centerOfMass = centerOfMass;
 	}
 	
 	void Update ()
@@ -23,32 +35,72 @@ public class DinosaurController : MonoBehaviour {
     {
         if (Input.GetKey(KeyCode.D))
         {
-            motor.angularVelocity = -motorVelocity;
+            legs.angularVelocity = -motorVelocity;
+            fLegAnim.SetBool("Walking", true);
+            bLegAnim.SetBool("Walking", true);
+            FlipDinosaur(false);
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            motor.angularVelocity = motorVelocity;
+            legs.angularVelocity = motorVelocity;
+            fLegAnim.SetBool("Walking", true);
+            bLegAnim.SetBool("Walking", true);
+            FlipDinosaur(true);
         }
         else
         {
-            motor.angularVelocity = 0f;
+            legs.angularVelocity = 0f;
+            fLegAnim.SetBool("Walking", false);
+            bLegAnim.SetBool("Walking", false);
         }
 
-        JointMotor2D jmotor = joint.motor;
+        //Update center of mass balancing
+        Vector2 centerOfMass = body.centerOfMass;
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            jmotor.motorSpeed = -jointVelocity;
+            centerOfMass -= centerOfMassIncrement;
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            jmotor.motorSpeed = jointVelocity;
-        }
-        else
-        {
-            jmotor.motorSpeed = 0f;
+            centerOfMass += centerOfMassIncrement;
         }
 
-        joint.motor = jmotor;
+        centerOfMass.x = Mathf.Clamp(centerOfMass.x, -centerOfMassLimit, centerOfMassLimit);
+
+        body.centerOfMass = centerOfMass;
+    }
+
+    private void FlipDinosaur(bool left)
+    {
+        foreach (Transform part in flipParts)
+        {
+            Vector3 partScale = part.localScale;
+
+            bool isLeft = partScale.x > 0;
+
+            if (left == isLeft)
+                continue;
+
+            partScale.x *= -1f;
+            part.localScale = partScale;
+
+            if (part != body.transform)
+            {
+                Vector3 partPos = part.localPosition;
+                partPos.x *= -1f;
+                part.localPosition = partPos;
+            }
+
+        }
+    }
+
+    void OnDrawGizmos()
+    {
+        //Draw center of mass
+        Vector3 centerOfMassPos = body.transform.TransformPoint(body.centerOfMass);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(centerOfMassPos, 0.1f);
     }
 }
