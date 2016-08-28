@@ -17,12 +17,12 @@ TagManager:
   - Dinosaur
   - Props
   - Picked
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Material
+  - Construction
+  - Funilator
+  - FallingFunilator
+  - BuildZone
+  - RocketPart
   - 
   - 
   - 
@@ -43,6 +43,15 @@ TagManager:
     locked: 0
   - name: Map
     uniqueID: 3515793801
+    locked: 0
+  - name: Construction
+    uniqueID: 2752191031
+    locked: 0
+  - name: Material
+    uniqueID: 841896685
+    locked: 0
+  - name: Funilator
+    uniqueID: 1446644813
     locked: 0
   - name: Entity
     uniqueID: 1446270435

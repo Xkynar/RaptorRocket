@@ -3,9 +3,10 @@ using System.Collections;
 
 public class HatController : MonoBehaviour {
 
-    [SerializeField] private Camera camera;
+    [SerializeField] private Camera cam;
     [SerializeField] private SpriteRenderer laserSprite;
     [SerializeField] private float telekinesisForce = 3f;
+    [SerializeField] private LayerMask layerMask;
 
     private Rigidbody2D picked;
 
@@ -17,11 +18,11 @@ public class HatController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        Vector3 mouseWorldPos = camera.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mouseWorldPos = cam.ScreenToWorldPoint(Input.mousePosition);
 
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
+            RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero, float.MaxValue, layerMask);
 
             if (hit.collider != null)
             {

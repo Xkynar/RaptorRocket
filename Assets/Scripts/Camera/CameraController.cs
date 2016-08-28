@@ -3,9 +3,12 @@ using System.Collections;
 
 public class CameraController : MonoBehaviour {
 
-    [SerializeField] private Camera mainCam, leftCam, rightCam;
+    [SerializeField] private Camera mainCam;
+    [SerializeField] private Camera leftCam;
+    [SerializeField] private Camera rightCam;
+
     [SerializeField] private SpriteRenderer groundRenderer;
-    [SerializeField] private Transform player;
+    [SerializeField] private Transform follow;
 
     private Vector3 groundExtents;
 
@@ -24,17 +27,22 @@ public class CameraController : MonoBehaviour {
 	void Update ()
     {
         //Loop player
-        if (player.position.x > groundExtents.x)
+        if (follow.position.x > groundExtents.x)
         {
-            player.position = new Vector3(-groundExtents.x, player.position.y, player.position.z);
+            follow.position = new Vector3(-groundExtents.x, follow.position.y, follow.position.z);
         }
 
-        if (player.position.x < -groundExtents.x)
+        if (follow.position.x < -groundExtents.x)
         {
-            player.position = new Vector3(groundExtents.x, player.position.y, player.position.z);
+            follow.position = new Vector3(groundExtents.x, follow.position.y, follow.position.z);
         }
 
         //Follow player
-        transform.position = player.position;
+        transform.position = follow.position;
 	}
+
+    public void SetFollow(Transform follow)
+    {
+        this.follow = follow;
+    }
 }

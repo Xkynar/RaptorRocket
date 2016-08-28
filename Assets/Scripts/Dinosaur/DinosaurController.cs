@@ -6,7 +6,8 @@ public class DinosaurController : MonoBehaviour {
     [SerializeField] private Rigidbody2D legs;
     [SerializeField] private Rigidbody2D body;
 
-    [SerializeField] private Animator fLegAnim, bLegAnim;
+    [SerializeField] private Animator fLegAnim;
+    [SerializeField] private Animator bLegAnim;
 
     [SerializeField] private float motorVelocity = 100f;
     [SerializeField] private float jumpForce = 3000f;

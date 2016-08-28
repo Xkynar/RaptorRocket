@@ -3,7 +3,7 @@ using System.Collections;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PickableController : MonoBehaviour {
-
+    
     [SerializeField] private string pickedLayer = "Picked";
     private int originalLayer;
     private Rigidbody2D rb;
