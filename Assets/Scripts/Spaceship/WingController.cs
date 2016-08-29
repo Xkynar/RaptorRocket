@@ -6,6 +6,7 @@ public class WingController : MonoBehaviour {
     private Rigidbody2D rb;
     [SerializeField] private float force = 100f;
     [SerializeField] private bool rightWing;
+    [SerializeField] private GameObject thrusterEffect;
 
     private bool activated = false;
 
@@ -29,5 +30,12 @@ public class WingController : MonoBehaviour {
     public void Activate()
     {
         activated = true;
+        thrusterEffect.SetActive(true);
+    }
+
+    public void Deactivate()
+    {
+        activated = false;
+        thrusterEffect.SetActive(false);
     }
 }

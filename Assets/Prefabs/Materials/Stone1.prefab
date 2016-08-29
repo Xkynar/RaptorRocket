@@ -13,6 +13,7 @@ GameObject:
   - 58: {fileID: 5857098}
   - 114: {fileID: 11459776}
   - 114: {fileID: 11431298}
+  - 114: {fileID: 11495180}
   m_Layer: 12
   m_Name: Stone1
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 150654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.76, y: -1.7, z: 0}
+  m_LocalPosition: {x: 94.29, y: -2.9474454, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -87,6 +88,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickedLayer: Picked
+--- !u!114 &11495180
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 134f12a929203054dbef56cd3c6db3ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21221500
 SpriteRenderer:
   m_ObjectHideFlags: 1

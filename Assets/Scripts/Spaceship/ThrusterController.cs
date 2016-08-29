@@ -3,6 +3,8 @@ using System.Collections;
 
 public class ThrusterController  : MonoBehaviour {
 
+    [SerializeField] private GameObject thrusterEffect;
+
     private Rigidbody2D rb;
     private float engineForce = 0;
 
@@ -22,5 +24,6 @@ public class ThrusterController  : MonoBehaviour {
     public void SetForce(float engineForce)
     {
         this.engineForce = engineForce;
+        thrusterEffect.SetActive(engineForce > 0);
     }
 }

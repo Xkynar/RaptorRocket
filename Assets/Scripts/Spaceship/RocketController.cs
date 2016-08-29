@@ -4,6 +4,11 @@ using System.Collections.Generic;
 
 public class RocketController : MonoBehaviour {
 
+    [SerializeField] private Transform rocketPartsContainer;
+    [SerializeField] private float crashTriggerDelay = 3f;
+    private bool blastoff = false;
+    private float blastoffTime;
+
     private Rigidbody2D rb;
 
 	void Start ()
@@ -19,6 +24,9 @@ public class RocketController : MonoBehaviour {
 
     public void Launch()
     {
+        blastoff = true;
+        blastoffTime = Time.time;
+
         //Prepare Components
         FixedJoint2D[] joints = GetComponents<FixedJoint2D>();
 
@@ -31,11 +39,18 @@ public class RocketController : MonoBehaviour {
 
         foreach (FixedJoint2D joint in joints)
         {
-            EngineController engine = joint.connectedBody.GetComponent<EngineController>();
-            NoselController nosel = joint.connectedBody.GetComponent<NoselController>();
-            ThrusterController thruster = joint.connectedBody.GetComponent<ThrusterController>();
-            WingController wing = joint.connectedBody.GetComponent<WingController>();
-            CockpitController cockpit = joint.connectedBody.GetComponent<CockpitController>();
+            Rigidbody2D rocketPart = joint.connectedBody;
+            rocketPart.transform.parent = this.transform;
+
+            LoopableObject loopObj = rocketPart.GetComponent<LoopableObject>();
+            if (loopObj != null)
+                Destroy(loopObj);
+
+            EngineController engine = rocketPart.GetComponent<EngineController>();
+            NoselController nosel = rocketPart.GetComponent<NoselController>();
+            ThrusterController thruster = rocketPart.GetComponent<ThrusterController>();
+            WingController wing = rocketPart.GetComponent<WingController>();
+            CockpitController cockpit = rocketPart.GetComponent<CockpitController>();
 
             if (engine != null)
             {
@@ -79,5 +94,54 @@ public class RocketController : MonoBehaviour {
 
         //Launch
         rb.isKinematic = false;
+    }
+
+    void OnTriggerStay2D(Collider2D coll)
+    {
+        if (blastoff && (Time.time - blastoffTime) > crashTriggerDelay)
+        {
+            SelfDestruct();
+        }
+    }
+
+    public void SelfDestruct()
+    {
+        blastoff = false;
+
+        FixedJoint2D[] joints = GetComponents<FixedJoint2D>();
+
+        foreach (FixedJoint2D joint in joints)
+        {
+            Rigidbody2D rocketPart = joint.connectedBody;
+            rocketPart.transform.parent = rocketPartsContainer;
+
+            rocketPart.gameObject.AddComponent<LoopableObject>();
+            
+            rocketPart.velocity = Vector2.zero;
+            Destroy(joint);
+
+            ThrusterController thruster = rocketPart.GetComponent<ThrusterController>();
+            WingController wing = rocketPart.GetComponent<WingController>();
+            CockpitController cockpit = rocketPart.GetComponent<CockpitController>();
+
+            if (thruster != null)
+            {
+                thruster.SetForce(0f);
+            }
+
+            if (wing != null)
+            {
+                wing.Deactivate();
+            }
+
+            if (cockpit != null)
+            {
+                cockpit.Exit();
+            }
+        }
+
+        rb.isKinematic = true;
+        transform.localPosition = Vector3.zero;
+        transform.rotation = Quaternion.identity;
     }
 }

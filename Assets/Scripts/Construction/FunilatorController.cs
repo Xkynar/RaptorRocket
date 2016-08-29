@@ -18,6 +18,8 @@ public class FunilatorController : MonoBehaviour {
 
     //Construction
     private List<MaterialType> materials; //What is put inside
+
+    [SerializeField] private GameObject funilatorBar;
     [SerializeField] private Transform exit;
     [SerializeField] private GameObject poopPrefab;
 
@@ -33,11 +35,15 @@ public class FunilatorController : MonoBehaviour {
     //Components
     private Rigidbody2D rb;
     private SpriteRenderer sr;
+    private AudioSource audioSource;
+
+    private bool building = false;
 
 	void Start ()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
 
         materials = new List<MaterialType>();
 
@@ -46,8 +52,25 @@ public class FunilatorController : MonoBehaviour {
 	
 	void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.H))
-            Combine();
+        if (building)
+        {
+            float rate = audioSource.time / audioSource.clip.length;
+            rate *= 1.27f; //to make "pop" sound synchronized
+
+            Vector3 funilatorBarScale = funilatorBar.transform.localScale;
+            funilatorBarScale.x = rate;
+            funilatorBar.transform.localScale = funilatorBarScale;
+
+            if (rate >= 1f)
+            {
+                building = false;
+
+                funilatorBarScale.x = 0f;
+                funilatorBar.transform.localScale = funilatorBarScale;
+
+                Combine();
+            }
+        }
 	}
 
     public void Drop()
@@ -79,6 +102,9 @@ public class FunilatorController : MonoBehaviour {
         {
             materials.Add(matCtrl.material);
             Destroy(coll.gameObject);
+
+            audioSource.Play();
+            building = true;
         }
     }
 

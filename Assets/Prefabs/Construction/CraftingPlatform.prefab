@@ -9,6 +9,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 455334}
   - 50: {fileID: 5014394}
+  - 61: {fileID: 6172268}
+  - 114: {fileID: 11402312}
+  - 114: {fileID: 11480896}
   m_Layer: 13
   m_Name: RocketFrame
   m_TagString: Untagged
@@ -84,7 +87,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 440192}
@@ -97,7 +100,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146368}
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -120,6 +123,20 @@ BoxCollider2D:
   m_Offset: {x: 0, y: -0.0471344}
   serializedVersion: 2
   m_Size: {x: 4.84, y: 0.8257313}
+--- !u!61 &6172268
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146368}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 4.17, y: 6.25}
 --- !u!61 &6195644
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -134,6 +151,30 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 4.17, y: 6.25}
+--- !u!114 &11402312
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0925ee4b3035914b95b8d5166f76bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rocketPartsContainer: {fileID: 0}
+  crashTriggerDelay: 3
+--- !u!114 &11480896
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 134f12a929203054dbef56cd3c6db3ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11497816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -147,6 +188,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocketFrame: {fileID: 5014394}
   cam: {fileID: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 131072
 --- !u!212 &21259338
 SpriteRenderer:
   m_ObjectHideFlags: 1

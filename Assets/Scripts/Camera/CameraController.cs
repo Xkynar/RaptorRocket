@@ -26,23 +26,36 @@ public class CameraController : MonoBehaviour {
 	
 	void Update ()
     {
-        //Loop player
-        if (follow.position.x > groundExtents.x)
-        {
-            follow.position = new Vector3(-groundExtents.x, follow.position.y, follow.position.z);
-        }
-
-        if (follow.position.x < -groundExtents.x)
-        {
-            follow.position = new Vector3(groundExtents.x, follow.position.y, follow.position.z);
-        }
+        LoopObjects();
 
         //Follow player
-        transform.position = follow.position;
+        if(follow != null) transform.position = follow.position;
 	}
+
+    private void LoopObjects()
+    {
+        foreach (LoopableObject loopableObject in FindObjectsOfType<LoopableObject>())
+        {
+            //Loop player
+            if (loopableObject.transform.position.x > groundExtents.x)
+            {
+                loopableObject.transform.position = new Vector3(-groundExtents.x, loopableObject.transform.position.y, loopableObject.transform.position.z);
+            }
+
+            if (loopableObject.transform.position.x < -groundExtents.x)
+            {
+                loopableObject.transform.position = new Vector3(groundExtents.x, loopableObject.transform.position.y, loopableObject.transform.position.z);
+            }
+        }
+    }
 
     public void SetFollow(Transform follow)
     {
         this.follow = follow;
+    }
+
+    public Camera GetMainCamera()
+    {
+        return mainCam;
     }
 }

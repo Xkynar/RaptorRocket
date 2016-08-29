@@ -27,6 +27,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 450566}
   - 114: {fileID: 11436338}
+  - 82: {fileID: 8225022}
   m_Layer: 9
   m_Name: Hat
   m_TagString: Untagged
@@ -260,6 +261,8 @@ GameObject:
   - 255: {fileID: 25531612}
   - 255: {fileID: 25569488}
   - 255: {fileID: 25540004}
+  - 82: {fileID: 8234496}
+  - 82: {fileID: 8210534}
   m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
@@ -402,7 +405,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 160878}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.42, y: -2, z: 0}
+  m_LocalPosition: {x: -10.1, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 425216}
@@ -848,6 +851,228 @@ PolygonCollider2D:
       - {x: 0.39999998, y: -0.17}
       - {x: 0.47, y: -0.11}
       - {x: 0.47, y: 0.01}
+--- !u!82 &8210534
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160878}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!82 &8225022
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112372}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: bf43c90bb237d9e4bb0174c24b36bb53, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!82 &8234496
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160878}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &9539760
 Animator:
   serializedVersion: 3
@@ -898,7 +1123,8 @@ MonoBehaviour:
   fLegAnim: {fileID: 9539760}
   bLegAnim: {fileID: 9541746}
   motorVelocity: 300
-  jumpForce: 3000
+  jumpForce: 600
+  centerOfMassLimit: 5
   flipParts:
   - {fileID: 449760}
   - {fileID: 482720}
@@ -912,6 +1138,25 @@ MonoBehaviour:
   - {fileID: 488024}
   - {fileID: 436396}
   - {fileID: 425216}
+  jumpLayermask:
+    serializedVersion: 2
+    m_Bits: 152833
+  rayLength: 2
+  footstepAudiosource: {fileID: 8234496}
+  footstepSounds:
+  - {fileID: 8300000, guid: b345c14ebbd035f4ab25d55a865bf0a3, type: 3}
+  - {fileID: 8300000, guid: ab145790fad40bd468a4a88e30317dde, type: 3}
+  - {fileID: 8300000, guid: c4feb198e298d27439775ae137a25e6b, type: 3}
+  - {fileID: 8300000, guid: 5f4be42a1587dcc489dcf16e8deef8c0, type: 3}
+  - {fileID: 8300000, guid: ac02428321c7b9a4ab0a8ba2dd45e3ff, type: 3}
+  - {fileID: 8300000, guid: 06d6c9c713c99a743b834b92ce36a2e7, type: 3}
+  jumpAudiosource: {fileID: 8210534}
+  jumpSounds:
+  - {fileID: 8300000, guid: 3486c3552e5e0b449b27df53abe8e3de, type: 3}
+  - {fileID: 8300000, guid: ed448323b706942499d4845349230c70, type: 3}
+  - {fileID: 8300000, guid: a1182d92dac3253469f3ef651e2063ad, type: 3}
+  - {fileID: 8300000, guid: d26484a1ce16bc947a5fa45589f19564, type: 3}
+  - {fileID: 8300000, guid: 9210af4c2e5d7944399926dec5bd7d40, type: 3}
 --- !u!114 &11436338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -929,6 +1174,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 136192
+  hatLaserIcon: {fileID: 0}
 --- !u!114 &11457398
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1336,7 +1582,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.029001579, y: -0.35998535}
-  m_ConnectedAnchor: {x: 0.0000009536743, y: 0.000014543533}
+  m_ConnectedAnchor: {x: 0.0000009536743, y: 0.000014454126}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1359,7 +1605,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.018368185, y: -0.16760945}
-  m_ConnectedAnchor: {x: 0.23163223, y: 0.0523901}
+  m_ConnectedAnchor: {x: 0.23163223, y: 0.052390337}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1405,7 +1651,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.5869999, y: -0.024000168}
+  m_ConnectedAnchor: {x: -0.58700085, y: -0.024000168}
   m_DampingRatio: 0
   m_Frequency: 10
 --- !u!255 &25531612
@@ -1439,7 +1685,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.71996105, y: -0.22460318}
-  m_ConnectedAnchor: {x: -0.0009613037, y: 0.09839702}
+  m_ConnectedAnchor: {x: -0.0009613037, y: 0.09839693}
   m_DampingRatio: 0
   m_Frequency: 50
 --- !u!255 &25549250
@@ -1473,7 +1719,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.8491849, y: -0.1261468}
-  m_ConnectedAnchor: {x: -0.019185066, y: 0.04185319}
+  m_ConnectedAnchor: {x: -0.019185066, y: 0.0418531}
   m_DampingRatio: 0
   m_Frequency: 50
 --- !u!255 &25590670

@@ -13,6 +13,7 @@ GameObject:
   - 114: {fileID: 11400180}
   - 114: {fileID: 11477850}
   - 60: {fileID: 6097704}
+  - 114: {fileID: 11470252}
   m_Layer: 17
   m_Name: IronNosel
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.08, y: 4.27, z: 0}
+  m_LocalPosition: {x: 90.98, y: 4.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40,7 +41,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122136}
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -82,6 +83,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickedLayer: Picked
+--- !u!114 &11470252
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 134f12a929203054dbef56cd3c6db3ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11477850
 MonoBehaviour:
   m_ObjectHideFlags: 1
