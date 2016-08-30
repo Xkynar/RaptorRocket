@@ -11,9 +11,10 @@ GameObject:
   - 212: {fileID: 21242714}
   - 95: {fileID: 9591104}
   - 50: {fileID: 5077720}
+  - 114: {fileID: 11452692}
   - 61: {fileID: 6103034}
   - 114: {fileID: 11425002}
-  m_Layer: 19
+  m_Layer: 14
   m_Name: Woman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 161024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.26, y: 1.34, z: 0}
+  m_LocalPosition: {x: 67.6, y: 1.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -91,6 +92,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134f12a929203054dbef56cd3c6db3ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11452692
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e1746ef3aa130d45a63b935a0021321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionRadius: 5
+  detectionMask:
+    serializedVersion: 2
+    m_Bits: 512
+  runForce: 10
+  maxRunSpeed: 4
+  minRunTime: 1
+  maxRunTime: 3
 --- !u!212 &21242714
 SpriteRenderer:
   m_ObjectHideFlags: 1

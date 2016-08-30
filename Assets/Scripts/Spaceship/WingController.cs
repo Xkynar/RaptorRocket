@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WingController : MonoBehaviour {
+public class WingController : RocketPart {
 
     private Rigidbody2D rb;
     [SerializeField] private float force = 100f;

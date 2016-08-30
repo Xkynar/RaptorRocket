@@ -11,10 +11,10 @@ GameObject:
   - 212: {fileID: 21272382}
   - 95: {fileID: 9524552}
   - 50: {fileID: 5084060}
-  - 114: {fileID: 11460510}
+  - 114: {fileID: 11493252}
   - 58: {fileID: 5894022}
-  - 114: {fileID: 11454162}
-  m_Layer: 19
+  - 114: {fileID: 11408356}
+  m_Layer: 14
   m_Name: Bird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.38, y: -1.13, z: 0}
+  m_LocalPosition: {x: 66.4, y: -1.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,7 +81,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11454162
+--- !u!114 &11408356
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134f12a929203054dbef56cd3c6db3ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11460510
+--- !u!114 &11493252
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

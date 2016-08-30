@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11400118}
   - 60: {fileID: 6070844}
   - 114: {fileID: 11400256}
-  m_Layer: 17
+  m_Layer: 10
   m_Name: IronThruster
   m_TagString: Untagged
   m_Icon: {fileID: 0}

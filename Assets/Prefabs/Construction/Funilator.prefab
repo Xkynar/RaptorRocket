@@ -48,7 +48,7 @@ GameObject:
   - 61: {fileID: 6111752}
   - 114: {fileID: 11467304}
   - 82: {fileID: 8282440}
-  m_Layer: 15
+  m_Layer: 13
   m_Name: Funilator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 415276}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36.9, y: 31.58, z: 0}
+  m_LocalPosition: {x: 1.78, y: 32.4, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 405628}
@@ -194,7 +194,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b46ed7bd695770241975db71ded80996, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -278,10 +278,35 @@ MonoBehaviour:
   exit: {fileID: 415276}
   poopPrefab: {fileID: 175446, guid: c34a08db6e53e134dab6b3c44b8e3cdc, type: 2}
   recipes:
-  - materials: 00000000
+  - materials: 0000000000000000
+    outputs:
+    - {fileID: 122136, guid: 9b1b556022d3e124cba827161abd5f35, type: 2}
+  - materials: 0000000001000000
+    outputs:
+    - {fileID: 125582, guid: 38c2fa08f3a685a49a63e7047b21c2bc, type: 2}
+  - materials: 0000000004000000
+    outputs:
+    - {fileID: 144198, guid: fd1f0f7ffb19ffd48996ed2c850b225b, type: 2}
+  - materials: 0100000001000000
+    outputs:
+    - {fileID: 140474, guid: 0e8e1f190b6086b48aa69f31642518a2, type: 2}
+  - materials: 000000000000000000000000
+    outputs:
+    - {fileID: 185960, guid: 6310bea5bf9df68459f925127671ccdb, type: 2}
+    - {fileID: 139810, guid: 2e0d9f96c7b979a459697a1a51245d18, type: 2}
+  - materials: 050000000200000002000000
+    outputs:
+    - {fileID: 122136, guid: 4734b7782b1c357488c896f2b68af643, type: 2}
+  - materials: 060000000100000002000000
+    outputs:
+    - {fileID: 125582, guid: 475575eec172b6c449aafb2e0b9b60c1, type: 2}
+  - materials: 070000000300000003000000
     outputs:
     - {fileID: 144198, guid: 1e77d9537c171d74895a3e54333958af, type: 2}
-  - materials: 01000000
+  - materials: 080000000300000002000000
+    outputs:
+    - {fileID: 140474, guid: 7bd26507f2f41c94697058b67edb9427, type: 2}
+  - materials: 090000000a000000010000000200000003000000
     outputs:
     - {fileID: 185960, guid: 71b2b31e59a86234da7f55e247519b9a, type: 2}
     - {fileID: 139810, guid: 62921855fd99063448ccbc519e79bde4, type: 2}

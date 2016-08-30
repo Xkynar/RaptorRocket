@@ -12,7 +12,7 @@ GameObject:
   - 61: {fileID: 6172268}
   - 114: {fileID: 11402312}
   - 114: {fileID: 11480896}
-  m_Layer: 13
+  m_Layer: 18
   m_Name: RocketFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ GameObject:
   - 4: {fileID: 404776}
   - 212: {fileID: 21263822}
   - 61: {fileID: 6143586}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: CraftingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - 212: {fileID: 21259338}
   - 61: {fileID: 6195644}
   - 114: {fileID: 11497816}
-  m_Layer: 16
+  m_Layer: 12
   m_Name: BuildZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 157652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.4, y: -2.6, z: 0}
+  m_LocalPosition: {x: -19.53, y: -2.6, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 440192}
@@ -136,7 +136,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 4.17, y: 6.25}
+  m_Size: {x: 4.53, y: 6.65}
 --- !u!61 &6195644
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -164,6 +164,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocketPartsContainer: {fileID: 0}
   crashTriggerDelay: 3
+  dinosaur: {fileID: 0}
+  launchDistance: 10
+  launchImage: {fileID: 0}
 --- !u!114 &11480896
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -188,9 +191,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocketFrame: {fileID: 5014394}
   cam: {fileID: 0}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 131072
 --- !u!212 &21259338
 SpriteRenderer:
   m_ObjectHideFlags: 1

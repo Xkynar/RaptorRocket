@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11477850}
   - 60: {fileID: 6097704}
   - 114: {fileID: 11470252}
-  m_Layer: 17
+  m_Layer: 10
   m_Name: IronNosel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 90.98, y: 4.27, z: 0}
+  m_LocalPosition: {x: -16.720097, y: 2.3536284, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -66,8 +66,8 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -0.85354614, y: -0.680634}
       - {x: -0.551136, y: -0.6817961}
-      - {x: -0.54535866, y: -0.89417887}
-      - {x: 0.5259075, y: -0.89417887}
+      - {x: -0.553545, y: -0.9965086}
+      - {x: 0.53409386, y: -0.9842291}
       - {x: 0.52456474, y: -0.680583}
       - {x: 0.87, y: -0.68}
       - {x: -0.014093399, y: 1.0176368}
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca02aaec2c0fdb644acb74a48cc26202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplier: 2
+  multiplier: 3
 --- !u!212 &21269392
 SpriteRenderer:
   m_ObjectHideFlags: 1

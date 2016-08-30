@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EngineController : MonoBehaviour
+public class EngineController : RocketPart
 {
     public float power;
 }

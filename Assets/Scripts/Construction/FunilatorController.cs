@@ -22,6 +22,7 @@ public class FunilatorController : MonoBehaviour {
     [SerializeField] private GameObject funilatorBar;
     [SerializeField] private Transform exit;
     [SerializeField] private GameObject poopPrefab;
+    [SerializeField] private MaterialManager matManager;
 
     [System.Serializable]
     private class Recipe
@@ -46,8 +47,6 @@ public class FunilatorController : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
 
         materials = new List<MaterialType>();
-
-        Drop();
 	}
 	
 	void Update ()
@@ -101,7 +100,7 @@ public class FunilatorController : MonoBehaviour {
         if (matCtrl != null)
         {
             materials.Add(matCtrl.material);
-            Destroy(coll.gameObject);
+            matManager.ResetMaterial(coll.gameObject);
 
             audioSource.Play();
             building = true;
@@ -134,7 +133,8 @@ public class FunilatorController : MonoBehaviour {
         {
             foreach (GameObject output in outputs)
             {
-                GameObject rocketPart = Instantiate(output, exit.position, Quaternion.identity) as GameObject;
+                GameObject rocketPart = Instantiate(output) as GameObject;
+                rocketPart.transform.position = exit.position;
                 rocketPart.transform.parent = rocketPartsContainer;
             }
         }

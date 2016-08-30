@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 421786}
   - 212: {fileID: 21241944}
   - 114: {fileID: 11453806}
-  m_Layer: 18
+  m_Layer: 12
   m_Name: HatCell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,10 +41,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 15
-  hat: {fileID: 0}
   layerMask:
     serializedVersion: 2
     m_Bits: 512
+  inRange: 0
 --- !u!212 &21241944
 SpriteRenderer:
   m_ObjectHideFlags: 1

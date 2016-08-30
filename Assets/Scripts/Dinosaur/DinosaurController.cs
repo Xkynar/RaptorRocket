@@ -21,6 +21,12 @@ public class DinosaurController : MonoBehaviour {
     [SerializeField] private float rayLength = 1f;
     private bool isGrounded = false;
 
+    //Death
+    [SerializeField] private float dieingTime = 1.5f;
+    [SerializeField] private HandController handCtrl;
+    private FlickerController flickerCtrl;
+    private bool dieing = false;
+
     //Audio
     [SerializeField] private AudioSource footstepAudiosource;
     [SerializeField] private AudioClip[] footstepSounds;
@@ -30,6 +36,8 @@ public class DinosaurController : MonoBehaviour {
 
 	void Start () 
     {
+        flickerCtrl = GetComponent<FlickerController>();
+
         //Make center of mass a little higher
         Vector2 centerOfMass = body.centerOfMass;
         centerOfMass.y = 1f;
@@ -38,8 +46,18 @@ public class DinosaurController : MonoBehaviour {
 	
 	void Update ()
     {
+        if (dieing)
+            return;
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            dieing = true;
+            StartCoroutine(Die(0f));
+        }
+
         UpdateJump();
         UpdateMovement();
+        UpdateDeath();
     }
 
     private void UpdateMovement()
@@ -110,6 +128,38 @@ public class DinosaurController : MonoBehaviour {
 
             PlayJumpSound();
         }
+    }
+
+    private void UpdateDeath()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(body.transform.position, body.transform.up, rayLength, jumpLayermask);
+
+        if (hit)
+        {
+            if (Vector3.Dot(body.transform.up, Vector3.down) > 0)
+            {
+                dieing = true;
+                StartCoroutine(Die(dieingTime));
+            }
+
+            Debug.DrawLine(body.transform.position, hit.point, Color.blue);
+        }
+        else
+        {
+            Debug.DrawLine(body.transform.position, body.transform.position + (body.transform.up * rayLength), Color.blue);
+        }
+    }
+
+    IEnumerator Die(float dieingTime)
+    {
+        yield return new WaitForSeconds(dieingTime);
+
+        handCtrl.Drop();
+        body.transform.localPosition = Vector3.zero;
+        body.transform.rotation = Quaternion.identity;
+        flickerCtrl.Flicker();
+
+        dieing = false;
     }
 
     private void FlipDinosaur(bool left)

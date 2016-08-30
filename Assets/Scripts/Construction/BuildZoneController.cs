@@ -6,7 +6,6 @@ public class BuildZoneController : MonoBehaviour {
 
     [SerializeField] private Rigidbody2D rocketFrame;
     [SerializeField] private Camera cam;
-    [SerializeField] private LayerMask layerMask;
 
     private List<Rigidbody2D> inside;
 
@@ -21,21 +20,25 @@ public class BuildZoneController : MonoBehaviour {
 
         if (Input.GetMouseButtonDown(1))
         {
-            RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero, float.MaxValue, layerMask);
+            RaycastHit2D[] hits = Physics2D.RaycastAll(mouseWorldPos, Vector2.zero);
 
-            if (hit.collider != null)
+            foreach (RaycastHit2D hit in hits)
             {
-                PickableController pickable = hit.collider.gameObject.GetComponent<PickableController>();
-
-                if (pickable != null)
+                if (hit.collider != null)
                 {
-                    Rigidbody2D rocketPart = pickable.GetComponent<Rigidbody2D>();
+                    RocketPart rocketPart = hit.collider.gameObject.GetComponent<RocketPart>();
 
-                    if (inside.Contains(rocketPart))
+                    if (rocketPart != null)
                     {
-                        HandleRocketPart(rocketPart);
+                        Rigidbody2D rocketPartRb = rocketPart.GetComponent<Rigidbody2D>();
+
+                        if (inside.Contains(rocketPartRb))
+                        {
+                            HandleRocketPart(rocketPartRb);
+                            break;
+                        }
                     }
-                }
+                }    
             }
         }
 	}

@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11411442}
   - 114: {fileID: 11408298}
   - 114: {fileID: 11462878}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Iron2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

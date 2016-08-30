@@ -31,7 +31,7 @@ GameObject:
   - 114: {fileID: 11492460}
   - 114: {fileID: 11447042}
   - 114: {fileID: 11473826}
-  m_Layer: 17
+  m_Layer: 10
   m_Name: IronWingRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012a3cca159301b4a81ea01af7d19813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 3
+  force: 5
   rightWing: 1
   thrusterEffect: {fileID: 100158}
 --- !u!114 &11473826

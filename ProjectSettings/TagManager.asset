@@ -17,14 +17,14 @@ TagManager:
   - Dinosaur
   - Props
   - Picked
-  - Material
-  - Construction
-  - Funilator
+  - Structure
   - FallingFunilator
-  - BuildZone
-  - RocketPart
-  - HatCell
   - NPC
+  - Funilator
+  - Projectile
+  - Obstacle
+  - Rocket
+  - 
   - 
   - 
   - 
@@ -41,8 +41,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BGMap
+    uniqueID: 519945851
+    locked: 0
   - name: Map
     uniqueID: 3515793801
+    locked: 0
+  - name: Ground
+    uniqueID: 1282302047
+    locked: 0
+  - name: FGMap
+    uniqueID: 2931289579
     locked: 0
   - name: Construction
     uniqueID: 2752191031
@@ -55,6 +64,9 @@ TagManager:
     locked: 0
   - name: Entity
     uniqueID: 1446270435
+    locked: 0
+  - name: Frontmap
+    uniqueID: 1617656143
     locked: 0
   - name: Effects
     uniqueID: 991436667

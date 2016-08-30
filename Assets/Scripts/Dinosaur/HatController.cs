@@ -7,7 +7,6 @@ public class HatController : MonoBehaviour {
     [SerializeField] private Camera cam;
     [SerializeField] private SpriteRenderer laserSprite;
     [SerializeField] private float telekinesisForce = 3f;
-    [SerializeField] private LayerMask layerMask;
     [SerializeField] private Image hatLaserIcon;
 
     private Rigidbody2D picked;
@@ -31,16 +30,20 @@ public class HatController : MonoBehaviour {
 
             if (Input.GetMouseButtonDown(0))
             {
-                RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero, float.MaxValue, layerMask);
+                RaycastHit2D[] hits = Physics2D.RaycastAll(mouseWorldPos, Vector2.zero);
 
-                if (hit.collider != null)
+                foreach (RaycastHit2D hit in hits)
                 {
-                    PickableController pickable = hit.collider.gameObject.GetComponent<PickableController>();
-
-                    if (pickable != null)
+                    if (hit.collider != null)
                     {
-                        picked = pickable.GetComponent<Rigidbody2D>();
-                        audioSource.Play();
+                        PickableController pickable = hit.collider.gameObject.GetComponent<PickableController>();
+
+                        if (pickable != null)
+                        {
+                            picked = pickable.GetComponent<Rigidbody2D>();
+                            audioSource.Play();
+                            break;
+                        }
                     }
                 }
             }
@@ -69,7 +72,7 @@ public class HatController : MonoBehaviour {
         }
 	}
 
-    private void Drop()
+    public void Drop()
     {
         picked = null;
         audioSource.Stop();
@@ -105,5 +108,10 @@ public class HatController : MonoBehaviour {
         Color color = hatLaserIcon.color;
         color.a = hasEnergy ? 1f : 0.2f;
         hatLaserIcon.color = color;
+    }
+
+    public bool IsPicking(GameObject obj)
+    {
+        return picked != null && picked.gameObject == obj;
     }
 }

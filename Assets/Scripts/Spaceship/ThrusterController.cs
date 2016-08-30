@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ThrusterController  : MonoBehaviour {
+public class ThrusterController  : RocketPart {
 
     [SerializeField] private GameObject thrusterEffect;
 

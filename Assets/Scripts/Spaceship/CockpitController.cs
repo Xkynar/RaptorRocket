@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CockpitController : MonoBehaviour {
+public class CockpitController : RocketPart {
 
-    [SerializeField] private DinosaurController dinosaur;
-    [SerializeField] private CameraController cameraCtrl;
+    private DinosaurController dinosaur;
+    private CameraController cameraCtrl;
     [SerializeField] private SmokeController smoke;
 
+    void Start()
+    {
+        dinosaur = FindObjectOfType<DinosaurController>();
+        cameraCtrl = FindObjectOfType<CameraController>();
+    }
 
     public void Enter()
     {

@@ -6,8 +6,8 @@ public class PDogController : MonoBehaviour {
 
     [SerializeField] private float detectionRadius = 5;
     [SerializeField] private LayerMask detectionMask;
-    [SerializeField] private float minRunSpeed = 3f;
-    [SerializeField] private float maxRunSpeed = 6f;
+    [SerializeField] private float runForce = 10f;
+    [SerializeField] private float maxRunSpeed = 4f;
     [SerializeField] private float minRunTime = 1f;
     [SerializeField] private float maxRunTime = 3f;
 
@@ -27,6 +27,10 @@ public class PDogController : MonoBehaviour {
 
     void FixedUpdate ()
     {
+        Quaternion rot = transform.rotation;
+        rot.z = 0f;
+        transform.rotation = rot;
+
         if (running)
             return;
 
@@ -37,23 +41,33 @@ public class PDogController : MonoBehaviour {
             running = true;
             animator.SetBool("Running", true);
 
-            //Calculate direction to run
-            float direction = Mathf.Sign(transform.position.x - hit.transform.position.x);
-            sr.flipX = direction < 0;
-
             //Run
-            StartCoroutine(Running(direction));
+            StartCoroutine(RunFrom(hit.transform));
         }
     }
 
-    IEnumerator Running(float direction)
+    IEnumerator RunFrom(Transform entity)
     {
         float elapsedTime = 0;
         float runTime = Random.Range(minRunTime, maxRunTime);
 
         while (elapsedTime < runTime)
         {
-            rb.velocity = Vector2.right * Random.Range(minRunSpeed, maxRunSpeed) * direction;
+            //Calculate direction to run
+            float direction = Mathf.Sign(transform.position.x - entity.transform.position.x);
+
+            //Check if we looped the map
+            if (Vector3.Distance(entity.transform.position, transform.position) > 50f)
+            {
+                direction *= -1f;
+            }
+
+            sr.flipX = direction < 0;
+
+            if(rb.velocity.magnitude < maxRunSpeed)
+                rb.AddForce(Vector2.right * runForce * direction);
+            
+            //rb.velocity = Vector2.right * Random.Range(minRunSpeed, maxRunSpeed) * direction;
 
             elapsedTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();

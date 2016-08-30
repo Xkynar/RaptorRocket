@@ -38,6 +38,11 @@ public class HandController : MonoBehaviour {
         }
 	}
 
+    public void Drop()
+    {
+        if(picked != null) picked.Drop();
+    }
+
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
